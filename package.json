@@ -17,6 +17,7 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "postman-to-markdown": "^1.2.0"
   }
 }
