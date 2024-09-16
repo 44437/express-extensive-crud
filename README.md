@@ -1,4 +1,4 @@
-This app is created with CommonJS.
+This app is created with **CommonJS**.
 
 ---
 ## Project: express-extensive-crud
@@ -60,21 +60,5 @@ This app is created with CommonJS.
 >```
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
-
-### End-point: users/:userID
-#### Method: PATCH
->```
->http://localhost:3000/users/{{userID}}
->```
-#### Body (**raw**)
-
-```json
-{
-    "surname": "Wolf"
-}
-```
-
-
-⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
-_________________________________________________
+_______________________________________
 Powered By: [postman-to-markdown](https://github.com/bautistaj/postman-to-markdown/)

@@ -121,35 +121,6 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "users/:userID",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"surname\": \"Wolf\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/users/{{userID}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"{{userID}}"
-					]
-				}
-			},
-			"response": []
 		}
 	]
 }

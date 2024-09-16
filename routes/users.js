@@ -47,29 +47,4 @@ router.delete("/:userID", (req, res) => {
     .catch((error) => res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error }));
 });
 
-router.patch("/:userID", (req, res) => {
-  const expectedId = Number(req.params.userID);
-  const { error, value: reqUser } = User.validate(req.body);
-
-  if (error) {
-    return res.status(StatusCodes.BAD_REQUEST).json({ error: error });
-  }
-
-  const index = users.findIndex((user) => user.id === expectedId);
-  const user = users[index];
-  if (index !== -1) {
-    for (const userField in reqUser) {
-      if (userField === "id") {
-        continue;
-      }
-
-      user[userField] = reqUser[userField];
-    }
-
-    return res.sendStatus(StatusCodes.OK);
-  }
-
-  return res.sendStatus(StatusCodes.BAD_REQUEST);
-});
-
 module.exports = router;
