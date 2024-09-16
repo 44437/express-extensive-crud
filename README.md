@@ -1,27 +1,30 @@
-# Project: express-extensive-crud
+This app is created with CommonJS.
 
-## End-point: users/
-### Method: GET
+---
+## Project: express-extensive-crud
+
+### End-point: users/
+#### Method: GET
 >```
 >http://localhost:3000/users
 >```
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: users/:userID
-### Method: GET
+### End-point: users/:userID
+#### Method: GET
 >```
 >http://localhost:3000/users/{{userID}}
 >```
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: users/
-### Method: POST
+### End-point: users/
+#### Method: POST
 >```
 >http://localhost:3000/users
 >```
-### Body (**raw**)
+#### Body (**raw**)
 
 ```json
 {
@@ -33,12 +36,12 @@
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: users/:userID
-### Method: PUT
+### End-point: users/:userID
+#### Method: PUT
 >```
 >http://localhost:3000/users/{{userID}}
 >```
-### Body (**raw**)
+#### Body (**raw**)
 
 ```json
 {
@@ -50,20 +53,20 @@
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: users/:userID
-### Method: DELETE
+### End-point: users/:userID
+#### Method: DELETE
 >```
 >http://localhost:3000/users/{{userID}}
 >```
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
-## End-point: users/:userID
-### Method: PATCH
+### End-point: users/:userID
+#### Method: PATCH
 >```
 >http://localhost:3000/users/{{userID}}
 >```
-### Body (**raw**)
+#### Body (**raw**)
 
 ```json
 {
