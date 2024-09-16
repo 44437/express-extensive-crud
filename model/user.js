@@ -1,9 +1,22 @@
 const Joi = require("joi");
 
-const User = Joi.object({
+const UserReq = Joi.object({
   id: Joi.number(),
   name: Joi.string(),
   surname: Joi.string(),
 });
 
-module.exports = User;
+const UserDB = Joi.object({
+  id: Joi.number().required(),
+  name: Joi.string(),
+  surname: Joi.string(),
+});
+
+const UserRes = Joi.object({
+  id: Joi.number().required(),
+  name: Joi.string(),
+  surname: Joi.string(),
+  username: Joi.string(),
+});
+
+module.exports = { UserReq, UserDB, UserRes };

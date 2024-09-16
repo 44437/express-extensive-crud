@@ -1,60 +1,50 @@
 const express = require("express");
 const { StatusCodes } = require("http-status-codes");
-const User = require("../model/user");
+const UsersRepository = require("../repository/users");
+const { UserReq } = require("../model/user");
 
 const router = express.Router();
-let users = [];
 
 router.get("/", (req, res) => {
-  res.send(users);
+  UsersRepository.getUsers()
+    .then((users) => res.send(users))
+    .catch((error) => res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error }));
 });
 
 router.post("/", (req, res) => {
-  const { error, value: user } = User.validate(req.body);
+  const { error, value: user } = UserReq.validate(req.body);
 
   if (error) {
-    return res.status(StatusCodes.BAD_REQUEST).json({ error: error.details[0].message });
+    return res.status(StatusCodes.BAD_REQUEST).json({ error: error });
   }
 
-  user.id = users.length;
-  users.push(user);
-
-  return res.status(StatusCodes.CREATED).json({ id: user.id });
+  UsersRepository.createUser(user)
+    .then((id) => res.status(StatusCodes.CREATED).json({ id: id }))
+    .catch((error) => res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error }));
 });
 
 router.get("/:userID", (req, res) => {
-  const expectedId = Number(req.params.userID);
-  const index = users.findIndex((user) => user.id === expectedId);
-
-  if (index !== -1) {
-    return res.send(users[index]);
-  }
-
-  return res.sendStatus(StatusCodes.NOT_FOUND);
+  UsersRepository.getUserByID(Number(req.params.userID))
+    .then((user) => res.send(user))
+    .catch((error) => res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error }));
 });
 
 router.put("/:userID", (req, res) => {
-  const expectedId = Number(req.params.userID);
-  const { error, value: reqUser } = User.validate(req.body);
+  const { error, value: user } = UserReq.validate(req.body);
 
   if (error) {
     return res.status(StatusCodes.BAD_REQUEST).json({ error: error.details[0].message });
   }
 
-  const index = users.findIndex((user) => user.id === expectedId);
-  if (index !== -1) {
-    reqUser.id = users[index].id;
-    users[index] = reqUser;
-
-    return res.sendStatus(StatusCodes.OK);
-  }
-
-  return res.sendStatus(StatusCodes.BAD_REQUEST);
+  UsersRepository.updateUserPUT(user, Number(req.params.userID))
+    .then((_) => res.sendStatus(StatusCodes.OK))
+    .catch((error) => res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error }));
 });
 
 router.delete("/:userID", (req, res) => {
-  users = users.filter((user) => user.id != req.params.userID);
-  res.sendStatus(StatusCodes.OK);
+  UsersRepository.deleteUser(Number(req.params.userID))
+    .then((_) => res.sendStatus(StatusCodes.OK))
+    .catch((error) => res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error }));
 });
 
 router.patch("/:userID", (req, res) => {
@@ -62,7 +52,7 @@ router.patch("/:userID", (req, res) => {
   const { error, value: reqUser } = User.validate(req.body);
 
   if (error) {
-    return res.status(StatusCodes.BAD_REQUEST).json({ error: error.details[0].message });
+    return res.status(StatusCodes.BAD_REQUEST).json({ error: error });
   }
 
   const index = users.findIndex((user) => user.id === expectedId);
