@@ -4,3 +4,5 @@ combine-mds:
 	cat express-extensive-crud.md >> README.md
 lint:
 	prettier . --write
+prepare-mysql:
+	sh db/run-mysql-for-local.sh
