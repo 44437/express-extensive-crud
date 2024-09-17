@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon --env-file=.env ./bin/www"
+    "dev": "nodemon --env-file=.env ./bin/www",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -18,8 +20,10 @@
     "mysql2": "^3.11.3"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "nodemon": "^3.1.4",
     "postman-to-markdown": "^1.2.0",
-    "prettier": "3.3.3"
+    "prettier": "3.3.3",
+    "supertest": "^7.0.0"
   }
 }
