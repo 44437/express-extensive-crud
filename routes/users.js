@@ -37,13 +37,13 @@ router.put("/:userID", (req, res) => {
   }
 
   UsersRepository.updateUserPUT(user, Number(req.params.userID))
-    .then((_) => res.sendStatus(StatusCodes.OK))
+    .then((_) => res.sendStatus(StatusCodes.NO_CONTENT))
     .catch((error) => res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error }));
 });
 
 router.delete("/:userID", (req, res) => {
   UsersRepository.deleteUser(Number(req.params.userID))
-    .then((_) => res.sendStatus(StatusCodes.OK))
+    .then((_) => res.sendStatus(StatusCodes.NO_CONTENT))
     .catch((error) => res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error }));
 });
 
