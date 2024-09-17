@@ -1,6 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS `local` ;
 CREATE TABLE `local`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
+  `name` VARCHAR(45) NOT NULL,
   `surname` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));

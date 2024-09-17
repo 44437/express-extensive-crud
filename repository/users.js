@@ -23,7 +23,7 @@ class UsersRepository {
               id: valueUserDB.id,
               name: valueUserDB.name,
               surname: valueUserDB.surname,
-              username: valueUserDB.name + valueUserDB.surname,
+              username: valueUserDB.name + (valueUserDB.surname !== null ? valueUserDB.surname : valueUserDB.id),
             });
             if (errorUserRes) {
               reject(errorUserRes);
@@ -74,7 +74,7 @@ class UsersRepository {
           id: valueUserDB.id,
           name: valueUserDB.name,
           surname: valueUserDB.surname,
-          username: valueUserDB.name + valueUserDB.surname,
+          username: valueUserDB.name + (valueUserDB.surname !== null ? valueUserDB.surname : valueUserDB.id),
         });
         if (errorUserRes) {
           reject(errorUserRes);
