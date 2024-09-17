@@ -1,4 +1,5 @@
-This app is created with **CommonJS**.
+This app is created with **CommonJS**.<br>
+In order to use `--env-file=.env`, you need node with a version over 20.6. Never mind, just run `nvm use`
 
 ---
 ## Project: express-extensive-crud
