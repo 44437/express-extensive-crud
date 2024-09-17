@@ -1,13 +1,6 @@
-const mysql = require("mysql2");
 const { UserDB, UserRes } = require("../model/user");
 const { ReasonPhrases } = require("http-status-codes");
-
-const connectionPool = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "admin",
-  database: "local",
-});
+const connectionPool = require("./index");
 
 class UsersRepository {
   static getUsers = () => {
