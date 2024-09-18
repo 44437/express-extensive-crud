@@ -1,5 +1,10 @@
 [![codecov](https://codecov.io/github/44437/express-extensive-crud/graph/badge.svg?token=4SNAHOHGCX)](https://codecov.io/github/44437/express-extensive-crud)
 ![ci](https://github.com/44437/express-extensive-crud/actions/workflows/ci.yaml/badge.svg)
+### Tasks:
+
+- [x] Prepare the outline
+- [ ] Dockerize(app and db) use docker compose or separate them  
+- [ ] Deploy
 
 > [!NOTE]
 > * This app is created with <b>CommonJS</b>.</br>
