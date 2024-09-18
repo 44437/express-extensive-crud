@@ -7,7 +7,7 @@ function UsersRepository(connectionPool) {
 
 UsersRepository.prototype.getUsers = function () {
   return new Promise((resolve, reject) => {
-    this.connectionPool.execute("SELECT * FROM users", (error, results, _) => {
+    this.connectionPool.execute("SELECT * FROM users", (error, results) => {
       if (error) {
         console.log(error);
         reject(error);
@@ -19,8 +19,7 @@ UsersRepository.prototype.getUsers = function () {
           const { error: errorUserDB, value: valueUserDB } = UserDB.validate(user);
           if (errorUserDB) {
             console.log(errorUserDB);
-            reject(errorUserDB);
-            return;
+            return null;
           }
 
           const { error: errorUserRes, value: valueUserRes } = UserRes.validate({
@@ -31,8 +30,7 @@ UsersRepository.prototype.getUsers = function () {
           });
           if (errorUserRes) {
             console.log(errorUserRes);
-            reject(errorUserRes);
-            return;
+            return null;
           }
 
           return valueUserRes;
@@ -72,9 +70,9 @@ UsersRepository.prototype.getUserByID = function (userID) {
       }
 
       const { error: errorUserDB, value: valueUserDB } = UserDB.validate(results[0]);
-      if (errorUserDB || valueUserDB === undefined) {
+      if (errorUserDB) {
         console.log(errorUserDB);
-        reject(errorUserDB || ReasonPhrases.NOT_FOUND);
+        reject(errorUserDB);
         return;
       }
 
