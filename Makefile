@@ -7,4 +7,4 @@ lint:
 prepare-mysql:
 	sh db/run-mysql-for-local.sh
 show-coverage:
-	yarn test:coverage && open coverage/lcov-report/index.html
+	yarn test:coverage && open coverage/index.html
